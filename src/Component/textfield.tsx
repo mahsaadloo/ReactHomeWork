@@ -13,9 +13,15 @@ const Textfield: FC<TextfieldProps> = ({label, helperText, icon, validation, ...
     const id = useId();
     return (
         <div>
-            {Boolean(label) && <label htmlFor={id}> {label} </label>}
-            {Boolean(icon) && <span>{icon}</span>} <input id={id} {...restProps} />
-            {Boolean(helperText) && <p> {helperText} </p>}
+            {Boolean(label) && <label htmlFor={id} className="font-medium"> {label} </label>}
+            <div className="flex border-2 rounded-md items-center">
+                {Boolean(icon) && <span>{icon}</span>}
+                <input className="w-full h-full bg-transparent outline-none px-2 py-2" 
+                    {...restProps}
+                    id={id}
+                    {...validation} />
+            </div>
+            {Boolean(helperText) && <p className="text-rose-600 pt-0.5"> {helperText} </p>}
         </div>
     )
 }

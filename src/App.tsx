@@ -17,19 +17,22 @@ const App:FC = () => {
                     {
                         path: '/',
                         element: <HomePage />
-                    },{
+                    },
+                    {
                         path: '/about',
                         element: <About />
                     }
                 ]
-            },{
+            },
+            {
                 path: '/auth',
                 element: <LayoutAuth />,
                 children: [
                     {
                         path: '/auth/register',
                         element: <RegisterPage />
-                    },{
+                    },
+                    {
                         path: '/auth/login',
                         element: <LoginPage />
                     }
